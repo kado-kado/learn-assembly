@@ -1,18 +1,32 @@
+## *./runasm.sh*
+
+assembly file -> object file -> executable file -> run file
+
+### How to use
+
+` ./runasm.sh example.asm `
+
+If doesn't work...
+
+` chmod +x runasm.sh `
+
+---
+
 ## *make object file*
 
-` nasm -f elf64 hello.asm -o hello.o `
+` nasm -f elf64 example.asm -o example.o `
 
 `nasm` assmbly -> object file
 
 `-f elf64` output(64bit ELF)
 
-`~.asm` assembly file
+`example.asm` assembly file
 
-`o- ~.o` output object file
+`o- example.o` output object file
 
 ## *make executable file*
 
-` ld hello.o -o hello -e _start `
+` ld example.o -o example -e _start `
 
 `ld` object file -> executable file
 
@@ -20,4 +34,12 @@
 
 ## *run file*
 
-` ./hello `
+` ./example `
+
+---
+
+## *objdump*
+
+` objdump -D example `
+
+executable file => assembly
